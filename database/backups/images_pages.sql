@@ -1,0 +1,18 @@
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (1, 'acceuil', 'image_slide_1', '1699804643image_slide_1.jpg', 'Madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (2, 'acceuil', 'image_slide_2', '1699044205image_slide_2.jpg', 'Madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (3, 'acceuil', 'image_slide_3', '1699044217image_slide_3.jpg', 'Madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (4, 'acceuil', 'historique', '1716488828historique.jpg', 'Madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (5, 'acceuil', 'qualite', '1699044364qualite.jpg', 'qualite madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (6, 'acceuil', 'filiere', '1699044364filiere.jpg', 'filiere madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (7, 'acceuil', 'approche', '1699044364approche.jpg', 'approche madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (8, 'qui_sommes_nous', 'background', '1704445944background.jpg', 'Notre image');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (9, 'qui_sommes_nous', 'historique', '1704445944historique.jpg', 'Historique Madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (10, 'qui_sommes_nous', 'qualite', '1699044364qualite.jpg', 'Qualite Madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (11, 'qui_sommes_nous', 'filiere', '1699044364filiere.jpg', 'Filiere Madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (12, 'qui_sommes_nous', 'approche', '1699044364approche.jpg', 'Approche Madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (13, 'nos_activite', 'background', '1699044408image_slide_1.jpg', 'Madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (14, 'nos_activite', 'historique', '1699044335historique.jpg', 'Historique Madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (15, 'nos_activite', 'qualite', '1699044364qualite.jpg', 'Qualite produit Madarom');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (16, 'nos_activite', 'filiere', '1699044364filiere.jpg', 'Filiere');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (17, 'nos_activite', 'approche', '1699044364approche.jpg', 'Approche');
+INSERT INTO madarom.images_pages (id, page, `key`, filename, alt) VALUES (19, 'nos_partenaires', 'background', 'partenaires.jpg', 'Mad\'arom Partenaires');

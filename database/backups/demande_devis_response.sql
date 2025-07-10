@@ -1,0 +1,3 @@
+INSERT INTO madarom.demande_devis_response (id, demande_devis_id, admin_message, user_id, price, created_at, updated_at, price_unit_id) VALUES (5, 27, null, 1, 70, '2024-05-18 17:19:33', '2024-05-18 17:19:33', 1);
+INSERT INTO madarom.demande_devis_response (id, demande_devis_id, admin_message, user_id, price, created_at, updated_at, price_unit_id) VALUES (6, 28, null, 1, 90000, '2024-05-18 21:53:05', '2024-05-18 21:53:05', 3);
+INSERT INTO madarom.demande_devis_response (id, demande_devis_id, admin_message, user_id, price, created_at, updated_at, price_unit_id) VALUES (8, 37, null, 1, 60, '2024-06-09 17:22:07', '2024-06-09 17:22:07', 1);
