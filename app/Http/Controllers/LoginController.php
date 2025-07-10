@@ -21,7 +21,7 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
-        
+
     	return view('account.login');
     }
 
@@ -34,6 +34,9 @@ class LoginController extends Controller
         return view('account.forgot_password');
     }
 
+    /**
+     * @throws \Exception
+     */
     public function processRegistration(Request $request) {
     	$validated = $request->validate([
             'name' => 'required',
@@ -52,18 +55,24 @@ class LoginController extends Controller
         $userData['password'] = bcrypt($userData['password']);
         $user = User::create($userData);
         Auth::login($user);
-        $this->sendWelcomeMail($user);
+        $result_mail =  $this->sendWelcomeMail($user);
+        logger($result_mail);
+        $request->session()->flash('message', $result_mail);
         if(is_login_redirected_last_url()) {
-            $last_url = get_last_url();
             clear_last_url();
-            return \Redirect::to($last_url);
+            return redirect()->to("/");
         } else
             return redirect()->route('espace_client');
     }
 
-    private function sendWelcomeMail($user)
+    private function sendWelcomeMail($user): string
     {
-        Mail::to($user->email)->send(new SendWelcomeClient($user)); 
+        try {
+            Mail::to($user->email)->send(new SendWelcomeClient($user));
+            return "message de bienvenue envoyee avec succes";
+        }catch (\Exception $e) {
+            return ("l'adresse email ".$user->email." n'est pas valide");
+        }
     }
 
     public function processLogin(Request $request) {
@@ -73,23 +82,23 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
 
-        
+
         if(Auth::attempt($credentials)) {
             if(is_login_redirected_last_url()) {
                 $last_url = get_last_url();
                 clear_last_url();
-                return \Redirect::to($last_url);
+                return redirect()->to("/");
             } else
                 return redirect()->route('espace_client');
         }
-        
+
         return back()->withErrors([
             'message' => 'error',
         ]);
     }
 
     public function reinitPassword(Request $request)
-    { 
+    {
         $validated = $request->validate([
             'email' => 'required'
         ]);
@@ -115,28 +124,28 @@ class LoginController extends Controller
 
     private function sendReinitPasswordMail($user)
     {
-        Mail::to($user->email)->send(new SendReinitPasswordMail($user)); 
-    } 
+        Mail::to($user->email)->send(new SendReinitPasswordMail($user));
+    }
 
     public function updateReinitPassword(Request $request)
-    { 
+    {
         $user = User::where('remember_token', $request->token)->first();
         if($user) {
             return view('account.reinit-password', ['token' => $request->token]);
         } else {
             return redirect()->route('passwordforgot');
         }
-    } 
+    }
 
      public function createPassword(Request $request)
-    { 
+    {
        $validated = $request->validate([
             'password' => 'required|confirmed'
         ]);
 
        $user = User::where('remember_token', $request->token)->first();
         if($user) {
-            
+
             $user->update(
                 ['password' => bcrypt($request->password),
                 'remember_token'=> null]
@@ -147,5 +156,5 @@ class LoginController extends Controller
         } else {
             return redirect()->back();
         }
-    } 
+    }
 }

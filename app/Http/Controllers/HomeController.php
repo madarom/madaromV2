@@ -15,10 +15,10 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        
+
         seo('title');
         $huiles = HuileEssentielle::with('images')->with('unites')->where('home_page', 1)->where('stock', 1)->paginate(4);
-        
+
         $epices = Epice::with('images')->where('home_page', 1)->where('stock', 1)->paginate(4);
         return view('home', ['huiles' => $huiles, 'epices' => $epices]);
     }
@@ -27,8 +27,8 @@ class HomeController extends Controller
     {
         app()->setLocale($locale);
         session()->put('locale', $locale);
-        if(\Auth::check()) {
-            $user = User::find(\Auth::id());
+        if(auth()->check()) {
+            $user = User::find(auth()->id());
             $user->lang = $locale;
             $user->update();
         }
@@ -38,7 +38,7 @@ class HomeController extends Controller
 
     public function saveContact(Request $request)
     {
-    	
+
         $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -58,7 +58,7 @@ class HomeController extends Controller
         Contact::create($data);
         $request->session()->flash('message', 'message');
         return redirect()->back();
-    } 
+    }
 
     public function partenaires(Request $request)
     {
