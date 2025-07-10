@@ -1,0 +1,1 @@
+INSERT INTO madarom.admins (id, name, email, password, picture, created_at, updated_at) VALUES (1, 'Admin', 'madarom.compte10@gmail.com', '$2a$12$JNUi2R1Uzvrob2tONmUVm.8ybehcJjFSCJOyrRHGVVct1ZdPQjBx2', null, null, null);

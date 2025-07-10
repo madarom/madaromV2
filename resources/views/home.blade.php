@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')   
+@section('content')
 <section class="search">
   <div class="img1 mySlides ">
     {!! image('acceuil.image_slide_1') !!}
@@ -42,7 +42,7 @@
            @include('products.summary')
         </div>
         @endforeach
-  
+
       </div>
       <div class="load-more mt-lg-5 mt-md-3  text-center">
         <a href="{{route('product.huile_essentiel.list')}}" class="btn btn-primary">{!!i18n('acceuil.nos_huiles')!!}</a>
@@ -78,9 +78,9 @@
 <section class="profil">
   <div class="inner">
     <div class="page-container">
-      
+
       <div class="listing listing-text no-wrap">
-        
+
         <div class="three-column">
           <div class="common-card img-histo">
             <figure class="common-card-figure">
@@ -106,9 +106,9 @@
 <section class="profil">
   <div class="inner">
     <div class="page-container">
-      
+
       <div class="listing no-wrap">
-        <div class="three-column"> 
+        <div class="three-column">
           <a class="block" href="{{route('qui_sommes_nous')}}">
               <div class="common-card img_common">
                 <figure class="common-card-figure">
@@ -122,7 +122,7 @@
                 </p>
               </figcaption>
           </a>
-          
+
         </div>
         <div class="three-column">
           <a class="block" href="{{route('qui_sommes_nous')}}">

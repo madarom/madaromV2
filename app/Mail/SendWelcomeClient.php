@@ -18,7 +18,9 @@ class SendWelcomeClient extends Mailable
      */
     public function __construct(private $user)
     {
-        //
+
+        $this->envelope();
+        $this->content();
     }
 
     /**
